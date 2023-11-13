@@ -24,10 +24,13 @@ const project: Project = {
 <style scoped>
     .experience {
         display: flex;
-        padding: 3.125rem;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 1.5625rem;
+        background-color: darkred;
+        max-width: 100%;
+        height: 100%;
+        box-sizing: border-box;
     }
 </style>
