@@ -1,0 +1,31 @@
+/* semantic color variables for this project */
+:root {
+  --color-text: #f8f1ed;
+  --color-background: #25170e;
+  --color-primary: #492e1d;
+  --color-secondary: #1d120c;
+  --color-accent: #af6e46;
+  --color-green: #45b257;
+  --color-red: #ed4f5f;
+  --color-gold: #f27b00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-background);
+  font-family: Poppins;
+  font-size: 15px;
+}
