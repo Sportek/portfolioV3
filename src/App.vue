@@ -1,8 +1,8 @@
 <script setup lang="ts">
   import BoardContainer from '@/components/BoardContainer.vue';
-import AboutContainer from './components/AboutContainer.vue';
-import ExperienceContainer from './components/ExperienceContainer.vue';
-import ContactContainer from './components/ContactContainer.vue';
+  import AboutContainer from './components/AboutContainer.vue';
+  import ExperienceContainer from './components/ExperienceContainer.vue';
+  import ContactContainer from './components/ContactContainer.vue';
 </script>
 
 <template>
