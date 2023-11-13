@@ -18,12 +18,13 @@ import LeftBarComponent from '@/components/LeftBarComponent.vue';
 <style scoped>
 .board {
     width: 100vw;
+    height: 100vh;
     display: grid;
     grid-template-areas:
         "leftbar header"
         "leftbar body";
-    grid-template-columns: auto 5fr;
-    grid-template-rows: auto 4fr;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
     gap: 10px;
 }
 

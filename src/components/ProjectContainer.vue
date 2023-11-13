@@ -8,39 +8,53 @@ defineProps<{
 
 <template>
     <div class="project">
-
-
         <div class="description-container">
-                    <div id="title">{{ project.title }}</div>
-                    <div class="information-container">
-                        <div class="information-title">Description du projet :</div>
-                        <div class="information-description">{{ project.description }}</div>
+            <div id="title">{{ project.title }}</div>
+            <div class="information-container">
+                <div class="information-title">Description du project :</div>
+                <div class="information-description">{{ project.description }}</div>
+            </div>
+            <div class="information-container">
+                <div class="information-title">Apprentissages réalisés :</div>
+                <div class="information-description">
+                    <ul>
+                        <li v-for="item in project.learning_achieved" v-bind:key="item.toString()">{{ item }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!-- 
+        <div class="description-container">
+                <div id="title">{{ project.title }}</div>
+                <div class="information-container">
+                    <div class="information-title">Description du projet :</div>
+                    <div class="information-description">{{ project.description }}</div>
+                </div>
+                <div class="information-container">
+                    <div class="information-title">Apprentissage réalisés :</div>
+                    <div class="information-description">
+                        <ul>
+                            <li v-for="item in project.learning_achieved" v-bind:key="item.toString()">{{ item }}</li>
+                        </ul>
                     </div>
-                    <div class="information-container">
-                        <div class="information-title">Apprentissage réalisés :</div>
-                        <div class="information-description">
-                            <ul>
-                                <li v-for="item in project.learning_achieved" v-bind:key="item.toString()">{{ item }}</li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="information-container">
+                    <div class="information-title">Technologies utilisées :</div>
+                    <div class="information-description">
+                        <ul>
+                            <li v-for="item in project.technologies" v-bind:key="item.toString()">{{ item }}</li>
+                        </ul>
                     </div>
-                    <div class="information-container">
-                        <div class="information-title">Technologies utilisées :</div>
-                        <div class="information-description">
-                            <ul>
-                                <li v-for="item in project.technologies" v-bind:key="item.toString()">{{ item }}</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="github">
-                        <a :href="project.github_link" target="_blank">
-                            <IconGithub/>
-                            <div id="github-text">
+                </div>
+                <div class="github">
+                    <a :href="project.github_link" target="_blank">
+                        <IconGithub/>
+                        <div id="github-text">
                             GitHub du projet
                         </div>
                     </a>
                 </div>
-            </div>
+            </div> -->
 
 
         <!-- <div class="container">
