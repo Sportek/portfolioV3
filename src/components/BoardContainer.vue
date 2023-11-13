@@ -57,4 +57,9 @@ section.body {
     scroll-behavior: smooth;
 }
 
+slot {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
 </style>
