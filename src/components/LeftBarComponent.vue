@@ -3,13 +3,12 @@ import ProfileComponent from "./ProfileComponent.vue";
 import IconLinkedin from "./icons/IconLinkedin.vue"
 import IconGithub from "./icons/IconGithub.vue"
 import IconCurriculumVitae from "./icons/IconCurriculumVitae.vue"
-defineProps<{}>()
 
 </script>
 
 <template>
     <div class="leftbar">
-        <ProfileComponent name="Gabriel Landry" title="Software engineering student" status="false"/>
+        <ProfileComponent name="Gabriel Landry" title="Software engineering student" status/>
         <hr>
         <nav class="navbar-titles">
             <ul class="text">
