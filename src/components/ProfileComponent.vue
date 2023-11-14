@@ -2,9 +2,9 @@
 import { COLORS } from "../colors";
 import IconAvailable from "./icons/IconAvailable.vue";
 defineProps<{
-    name: String,
-    title: String,
-    status: Boolean,
+    name: string,
+    title: string,
+    status: boolean,
 }>()
 
 </script>
