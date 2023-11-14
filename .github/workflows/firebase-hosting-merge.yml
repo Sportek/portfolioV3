@@ -16,7 +16,10 @@ jobs:
       - run: npm run build
       - uses: w9jds/firebase-action@master
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PORTFOLIO_209B7 }}'
-          channelId: live
-          projectId: portfolio-209b7
+          args: deploy --only hosting
+          # repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          # firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PORTFOLIO_209B7 }}'
+          # channelId: live
+          # projectId: portfolio-209b7
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FirebaseDeploy }}
