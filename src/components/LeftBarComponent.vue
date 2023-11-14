@@ -21,9 +21,9 @@ defineProps<{}>()
         <hr>
         <nav class="navbar-icons">
             <ul>
-                <li><a href="" class="icons"><IconLinkedin/></a></li>
-                <li><a href="" class="icons"><IconGithub/></a></li>
-                <li><a href="" class="icons"><IconCurriculumVitae/></a></li>
+                <li><a href="https://www.linkedin.com/in/gablandry/" target="_blank" class="icons"><IconLinkedin/></a></li>
+                <li><a href="https://github.com/Sportek" target="_blank" class="icons"><IconGithub/></a></li>
+                <li><a href="src/assets/files/gabriel_cv.pdf" download class="icons"><IconCurriculumVitae/></a></li>
             </ul>
         </nav>
     </div>

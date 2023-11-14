@@ -37,6 +37,7 @@
         background: var(--color-background);
         display: flex;
         padding: 3.125rem;
+        margin: 2rem;
         flex-direction: column;
         justify-content: center;
         align-items: center;

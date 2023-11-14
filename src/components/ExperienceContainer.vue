@@ -21,7 +21,9 @@ import ProjectContainer from "./ProjectContainer.vue"
         max-width: 100%;
         height: 100%;
         box-sizing: border-box;
-        padding: 3rem;
+        padding: 2rem;
+        margin: 0 2rem;
+        /* padding: 3rem; */
     }
 
     .title {

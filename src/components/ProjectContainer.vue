@@ -55,30 +55,31 @@ const changePage = (side: "left" | "right") => {
         <div class="container">
             <div class="data-container">
                 <div class="description-container">
-                    <div id="title">{{ state.project.title }}</div>
-                    <div class="information-container">
-                        <div class="information-title">Description du project :</div>
-                        <div class="information-description">{{ state.project.description }}</div>
-                    </div>
-                    <div class="information-container">
-                        <div class="information-title">Apprentissages réalisés :</div>
-                        <div class="information-description">
-                            <ul>
-                                <li v-for="item in state.project.learning_achieved" v-bind:key="item.toString()">{{ item }}</li>
-                            </ul>
+                    <div class="text-container">
+                        <div id="title">{{ state.project.title }}</div>
+                        <div class="information-container">
+                            <div class="information-title">Description du project :</div>
+                            <div class="information-description">{{ state.project.description }}</div>
+                        </div>
+                        <div class="information-container">
+                            <div class="information-title">Apprentissages réalisés :</div>
+                            <div class="information-description">
+                                <ul>
+                                    <li v-for="item in state.project.learning_achieved" v-bind:key="item.toString()">{{ item }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="information-container">
+                            <div class="information-title">Technologies utilisées :</div>
+                            <div class="information-description">
+                                <ul>
+                                    <li v-for="item in state.project.technologies" v-bind:key="item.toString()">{{ item }}</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="information-container">
-                        <div class="information-title">Technologies utilisées :</div>
-                        <div class="information-description">
-                            <ul>
-                                <li v-for="item in state.project.technologies" v-bind:key="item.toString()">{{ item }}</li>
-                            </ul>
-                        </div>
-                    </div>
-
                     <div class="github">
-                            <a :href="state.project.github_link" target="_blank">
+                        <a :href="state.project.github_link" target="_blank">
                             <IconGithub/>
                             <div id="github-text">
                                 GitHub du projet
@@ -92,8 +93,22 @@ const changePage = (side: "left" | "right") => {
                 </div>
             </div>
             <div class="arrows">
-                <IconArrow rotation="left" @click="changePage('left')"/>
-                <IconArrow rotation="right" @click="changePage('right')"/>
+                <IconArrow class="arrow" rotation="left" @click="changePage('left')"/>
+                <div class="dots">
+                    <div v-for="index in projects.length" v-bind:key="index">
+                        <div v-if="(index-1) === state.index">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                <circle cx="5" cy="5" r="5" fill="#F27B00"/>
+                            </svg>
+                        </div>
+                        <div v-else>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                <circle cx="5" cy="5" r="5" fill="#AF6E46"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <IconArrow class="arrow" rotation="right" @click="changePage('right')"/>
             </div>
         </div>
 
@@ -129,23 +144,33 @@ const changePage = (side: "left" | "right") => {
         width: 100%;
         height: 100%;
         display: flex;
-        padding: 0 3rem;
+        /* padding: 0 3rem; */
         flex-direction: column;
         box-sizing: border-box;
         max-width: 100%;
+        max-height: 100%;
         justify-content: center;
         align-items: center;
+    }
+
+    .text-container {
+        height: 100%;
     }
 
     .image-container {
         width: 40%;
         padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     img {
         border: 3px;
         border-radius: 10px;
         border-color: var(--color-gold);
         border-style: solid;
+        max-width: 300px;
+        max-height: 300px;
     }
     .description-container {
         display: flex;
@@ -163,31 +188,32 @@ const changePage = (side: "left" | "right") => {
     .container {
         display: flex;
         flex-direction: column;
-        padding: 3.125rem 3.125rem 0.625rem 3.125rem;
+        padding: 1rem 3.125rem;
         border: 3px;
         border-radius: 10px;
         border-color: var(--color-gold);
         border-style: solid;
         width: 100%;
         height: 100%;
+        overflow: auto;
     }
 
     .data-container {
         display: flex;
         flex-direction: row;
+        height: 100%;
     }
 
     img {
         height: 100%;
         width: 100%;
+        object-fit: cover;
     }
 
     .arrows {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-        width: 100%;
         color: var(--color-gold);
     }
 
@@ -219,6 +245,20 @@ const changePage = (side: "left" | "right") => {
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+    }
+
+    .dots {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .arrow:hover {
+        color: var(--color-accent);
+        cursor: pointer;
     }
 
 </style>
