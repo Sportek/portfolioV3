@@ -4,10 +4,10 @@ import LeftBarComponent from '@/components/LeftBarComponent.vue';
 
 <template>
     <div class="board">
+        <section class="header"></section>
         <section class="leftbar">
             <LeftBarComponent />
         </section>
-        <section class="header"></section>
         <section class="body">
             <slot/>
         </section>
@@ -61,6 +61,15 @@ section.body {
 slot {
     box-sizing: border-box;
     max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .board {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+  }
 }
 
 </style>

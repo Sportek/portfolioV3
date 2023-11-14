@@ -7,15 +7,15 @@
 
 <template>
   <main>
-    <BoardContainer class="scroll">
-      <AboutContainer id="about" class="elements"></AboutContainer>
-      <ExperienceContainer id="experience" class="elements"></ExperienceContainer>
-      <ContactContainer id="contact" class="elements"></ContactContainer>
-    </BoardContainer>
+      <BoardContainer class="scroll">
+        <AboutContainer id="about" class="elements"></AboutContainer>
+        <ExperienceContainer id="experience" class="elements"></ExperienceContainer>
+        <ContactContainer id="contact" class="elements"></ContactContainer>
+      </BoardContainer>
   </main>
 </template>
 
-<style scoped>
+<style>
   .elements {
     height: 100%;
   }

@@ -27,7 +27,7 @@ const projects: Project[] = [{
     github_link: "https://github.com/Sportek/DiscordApplication",
     project_image: "https://i.imgur.com/QNRWBbE.png"
 }, {
-    title: "Jeu d’échecs - 2023",
+    title: "Jeu d'échecs - 2023",
     description: "TODO",
     learning_achieved: ["Développement orienté objet", "Mise en pratique de mes connaissances en C++", "Mise en place de tests permettant une couverture complète du code"],
     technologies: ["C++", "Qt"],
@@ -98,7 +98,7 @@ const changePage = (side: "left" | "right") => {
                 </div>
 
                 <div class="image-container">
-                    <img :src="state.project.project_image" alt="image">
+                    <img :src="state.project.project_image" class="no-mobile" alt="image">
                 </div>
             </div>
             <div class="arrows">
@@ -271,6 +271,17 @@ const changePage = (side: "left" | "right") => {
     .arrow:hover {
         color: var(--color-accent);
         cursor: pointer;
+    }
+
+
+    @media screen and (max-width: 768px) {
+        .description-container {
+            width: 100%;
+        }
+
+        .image-container {
+            display: none;
+        }
     }
 
 </style>

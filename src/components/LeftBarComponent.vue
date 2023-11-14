@@ -8,7 +8,7 @@ import IconCurriculumVitae from "./icons/IconCurriculumVitae.vue"
 
 <template>
     <div class="leftbar">
-        <ProfileComponent name="Gabriel Landry" title="Software engineering student" status/>
+        <ProfileComponent class="mobile" name="Gabriel Landry" title="Software engineering student" status/>
         <hr>
         <nav class="navbar-titles">
             <ul class="text">
