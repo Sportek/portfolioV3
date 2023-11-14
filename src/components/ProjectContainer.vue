@@ -10,7 +10,16 @@ const projects: Project[] = [{
     technologies: ["C++", "Makefiles", "Shell"],
     github_link: "https://github.com/polytechnique-school-work/INF1900-Final",
     project_image: "https://i.imgur.com/fMc8L8K.jpg"
-}, {
+}, 
+{
+    title: "Portfolio - 2023",
+    description: "TODO",
+    learning_achieved: ["Design complet avec Figma", "Développement en différents composants"],
+    technologies: ["TypeScript", "VueJS", "HTML/CSS", "Figma"],
+    github_link: "https://github.com/Sportek/portfolioV3",
+    project_image: "https://i.imgur.com/uYoHqRF.png"
+},
+{
     title: "Commissions bot Discord - 2020/2022",
     description: "Mise en vente de différentes applications Discord à différents clients. Vente sous forme de plusieurs modules déjà réalisés ou développement de modules personnalisés pour les clients. Ces applications avaient généralement pour but de réaliser des actions d’automatisation pour aider à la gestion de la communauté de mes clients.",
     learning_achieved: ["Écouter et réaliser les demandes des clients", "Maintenir une  base de code dans le temps", "Modularisation des différents systèmes", "Mise en place sur différents systèmes Linux"],
@@ -58,7 +67,7 @@ const changePage = (side: "left" | "right") => {
                     <div class="text-container">
                         <div id="title">{{ state.project.title }}</div>
                         <div class="information-container">
-                            <div class="information-title">Description du project :</div>
+                            <div class="information-title">Description du projet :</div>
                             <div class="information-description">{{ state.project.description }}</div>
                         </div>
                         <div class="information-container">
@@ -155,6 +164,9 @@ const changePage = (side: "left" | "right") => {
 
     .text-container {
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 
     .image-container {
