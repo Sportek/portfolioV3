@@ -27,6 +27,7 @@ import ProjectContainer from "./ProjectContainer.vue"
     }
 
     .title {
+        /* Test */
         color: var(--color-gold);
         font-family: Poppins;
         font-size: 2.25rem;
