@@ -12,7 +12,7 @@
                     <div class="name">Gabriel Landry</div>
                 </div>
                 <div class="text">
-                    Second year student in software engineering at Polytechnique Montréal. Here you will find various information about me. If you want more, do not hesitate to <a href="">contact me</a>! 
+                    Second year student in software engineering at Polytechnique Montréal. Here you will find various information about me. If you want more, do not hesitate to <a href="#contact">contact me</a>! 
                 </div>
             </div>
         </div>

@@ -13,9 +13,9 @@ defineProps<{}>()
         <hr>
         <nav class="navbar-titles">
             <ul class="text">
-                <li><a href="" class="text">ABOUT</a></li>
-                <li><a href="" class="text">EXPERIENCE</a></li>
-                <li><a href="" class="text">CONTACT</a></li>
+                <li><a href="#about" class="text">ABOUT</a></li>
+                <li><a href="#experience" class="text">EXPERIENCE</a></li>
+                <li><a href="#contact" class="text">CONTACT</a></li>
             </ul>
         </nav>
         <hr>

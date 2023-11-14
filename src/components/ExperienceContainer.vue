@@ -1,22 +1,12 @@
 <script setup lang="ts">
 import DiscoverMoreContainer from './DiscoverMoreContainer.vue';
 import ProjectContainer from "./ProjectContainer.vue"
-
-const project: Project = {
-    title: "Projet système embarqué - 2023",
-    description: "Effectué dans le cadre du cours INF1900 et en équipe de 6, le projet avait pour but de développer différents système pour permettre à un robot d’effectuer un parcours tout en sauvegardant en mémoire différents points stratégiques pour ensuite cartographier les différents obstacles présents.",
-    learning_achieved: ["Travailler en équipe avec GitHub", "Recherche dans différentes documentations", "Mise en pratique de mes connaissances en C++", "Utilisation d’une carte à microcontrôleur", "Automatisation de certaines tâches avec des scripts Makefiles et Shell"],
-    technologies: ["C++", "Makefiles", "Shell"],
-    github_link: "https://github.com/polytechnique-school-work/INF1900-Final",
-    project_image: "https://i.imgur.com/fMc8L8K.jpg"
-}
-
 </script>
 
 <template>
     <div class="experience">
-        EXPERIENCE
-        <ProjectContainer :project="project"/>
+        <div class="title">EXPERIENCE</div>
+        <ProjectContainer/>
         <DiscoverMoreContainer/>
     </div>
 </template>
@@ -28,9 +18,19 @@ const project: Project = {
         justify-content: center;
         align-items: center;
         gap: 1.5625rem;
-        background-color: darkred;
         max-width: 100%;
         height: 100%;
         box-sizing: border-box;
+        padding: 3rem;
+    }
+
+    .title {
+        color: var(--color-gold);
+        font-family: Poppins;
+        font-size: 2.25rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.675rem;
     }
 </style>
