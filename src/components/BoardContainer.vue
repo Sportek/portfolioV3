@@ -51,7 +51,7 @@ section.body {
   grid-area: body;
   width: 100%;
   height: 100%;
-  display: block;
+  /* display: block; */
   margin: 0 auto;
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -68,6 +68,21 @@ slot {
     flex-direction: column;
     height: auto;
     width: 100vw;
+  }
+
+  .board > * {
+    border: none;
+  }
+
+  section.leftbar {
+    padding: 0;
+    height: auto;
+  }
+
+  section.body {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
   }
 }
 </style>

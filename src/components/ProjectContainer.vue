@@ -195,8 +195,6 @@ const changePage = (side: 'left' | 'right') => {
   border-style: solid;
   height: 100%;
   width: 100%;
-  /* background-color: red; */
-
   box-sizing: border-box;
 }
 
@@ -215,7 +213,6 @@ const changePage = (side: 'left' | 'right') => {
   overflow-x: hidden;
   padding: 1rem;
   min-height: 100%;
-  /* background-color: blue; */
 }
 
 /* Arrows  */
@@ -223,7 +220,6 @@ const changePage = (side: 'left' | 'right') => {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* background-color: var(--color-secondary); */
   align-items: center;
   width: 100%;
   color: var(--color-gold);
@@ -251,13 +247,11 @@ const changePage = (side: 'left' | 'right') => {
 }
 
 .text-container {
-  /* min-height: 100%; */
   height: 100%;
   width: 60%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  /* background-color: red; */
 }
 
 img {
@@ -276,12 +270,6 @@ img {
   align-items: center;
   justify-content: center;
 }
-
-/* .information-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-} */
 
 .data-container {
   display: flex;
