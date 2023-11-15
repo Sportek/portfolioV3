@@ -5,15 +5,15 @@ import IconGithub from './icons/IconGithub.vue'
 
 const projects: Project[] = [
   {
-    title: 'Projet système embarqué - 2023',
+    title: 'Embedded System Project - 2023',
     description:
-      'Effectué dans le cadre du cours INF1900 et en équipe de 6, le projet avait pour but de développer différents système pour permettre à un robot d’effectuer un parcours tout en sauvegardant en mémoire différents points stratégiques pour ensuite cartographier les différents obstacles présents.',
+      'The project was carried out as part of the INF1900 course and in teams of 6, with the goal of constructing diverse systems that would enable a robot to traverse terrain while saving strategic points in memory and mapping the different obstacles present.',
     learning_achieved: [
-      'Travailler en équipe avec GitHub',
-      'Recherche dans différentes documentations',
-      'Mise en pratique de mes connaissances en C++',
-      'Utilisation d’une carte à microcontrôleur',
-      'Automatisation de certaines tâches avec des scripts Makefiles et Shell'
+      'Working as a team with GitHub',
+      'Search in different documents',
+      'Putting my C++ knowledge into practice',
+      'Using a microcontroller board',
+      'Automate certain tasks with Makefiles and Shell scripts'
     ],
     technologies: ['C++', 'Makefiles', 'Shell'],
     github_link: 'https://github.com/polytechnique-school-work/INF1900-Final',
@@ -21,33 +21,37 @@ const projects: Project[] = [
   },
   {
     title: 'Portfolio - 2023',
-    description: 'TODO',
-    learning_achieved: ['Design complet avec Figma', 'Développement en différents composants'],
+    description:
+      'New version of my old portfolio that had very little information, this new version is made with more modern technologies in web development.',
+    learning_achieved: [
+      'Complete design with Figma',
+      'Development into different components with VueJS'
+    ],
     technologies: ['TypeScript', 'VueJS', 'HTML/CSS', 'Figma'],
     github_link: 'https://github.com/Sportek/portfolioV3',
     project_image: 'https://i.imgur.com/uYoHqRF.png'
   },
   {
-    title: 'Commissions bot Discord - 2020/2022',
+    title: 'Discord commission bot - 2020/2022',
     description:
-      'Mise en vente de différentes applications Discord à différents clients. Vente sous forme de plusieurs modules déjà réalisés ou développement de modules personnalisés pour les clients. Ces applications avaient généralement pour but de réaliser des actions d’automatisation pour aider à la gestion de la communauté de mes clients.',
+      'The sale of various Discord applications to different customers. Customers can choose to purchase either pre-made modules or customized modules. The purpose of these applications was to automate actions to manage the community of my customers.',
     learning_achieved: [
-      'Écouter et réaliser les demandes des clients',
-      'Maintenir une  base de code dans le temps',
-      'Modularisation des différents systèmes',
-      'Mise en place sur différents systèmes Linux'
+      'Listen and fulfill customer requests',
+      'Maintain a code base over time',
+      'Setup on different Linux systems'
     ],
-    technologies: ['TypeScript', 'NodeJS', 'DiscordJS', 'PM2 ou Pterodactyl'],
+    technologies: ['TypeScript', 'NodeJS', 'DiscordJS', 'PM2 or Pterodactyl'],
     github_link: 'https://github.com/Sportek/DiscordApplication',
     project_image: 'https://i.imgur.com/QNRWBbE.png'
   },
   {
-    title: "Jeu d'échecs - 2023",
-    description: 'TODO',
+    title: 'Chess game - 2023',
+    description:
+      'The project was carried out as part of the INF1900 course, allowed me to put my software development skills into practice by carrying out a more complex project, without forgetting that it allowed me to learn more in the world of automated tests.',
     learning_achieved: [
-      'Développement orienté objet',
-      'Mise en pratique de mes connaissances en C++',
-      'Mise en place de tests permettant une couverture complète du code'
+      'Object-oriented development',
+      'Putting my C++ knowledge into practice',
+      'Implementation of tests allowing full coverage of the code'
     ],
     technologies: ['C++', 'Qt'],
     github_link: 'https://github.com/polytechnique-school-work/INF1015-Echec',
@@ -83,11 +87,11 @@ const changePage = (side: 'left' | 'right') => {
           <div class="text-container">
             <div id="title">{{ state.project.title }}</div>
             <div class="information-container">
-              <div class="information-title">Description du projet :</div>
+              <div class="information-title">Description of the project :</div>
               <div class="information-description">{{ state.project.description }}</div>
             </div>
             <div class="information-container">
-              <div class="information-title">Apprentissages réalisés :</div>
+              <div class="information-title">Knowledge acquired :</div>
               <div class="information-description">
                 <ul>
                   <li v-for="item in state.project.learning_achieved" v-bind:key="item.toString()">
@@ -97,7 +101,7 @@ const changePage = (side: 'left' | 'right') => {
               </div>
             </div>
             <div class="information-container">
-              <div class="information-title">Technologies utilisées :</div>
+              <div class="information-title">Technologies used :</div>
               <div class="information-description">
                 <ul>
                   <li v-for="item in state.project.technologies" v-bind:key="item.toString()">
@@ -109,7 +113,7 @@ const changePage = (side: 'left' | 'right') => {
             <div class="github">
               <a :href="state.project.github_link" target="_blank">
                 <IconGithub />
-                <div id="github-text">GitHub du projet</div>
+                <div id="github-text">Github project link</div>
               </a>
             </div>
           </div>
