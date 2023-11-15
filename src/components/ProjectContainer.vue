@@ -80,35 +80,30 @@ const changePage = (side: 'left' | 'right') => {
     <div class="container">
       <div class="project-container">
         <div class="data-container">
-          <div class="text-wrapper">
-            <div class="text-container">
-              <div id="title">{{ state.project.title }}</div>
-              <div class="information-container">
-                <div class="information-title">Description du projet :</div>
-                <div class="information-description">{{ state.project.description }}</div>
+          <div class="text-container">
+            <div id="title">{{ state.project.title }}</div>
+            <div class="information-container">
+              <div class="information-title">Description du projet :</div>
+              <div class="information-description">{{ state.project.description }}</div>
+            </div>
+            <div class="information-container">
+              <div class="information-title">Apprentissages réalisés :</div>
+              <div class="information-description">
+                <ul>
+                  <li v-for="item in state.project.learning_achieved" v-bind:key="item.toString()">
+                    {{ item }}
+                  </li>
+                </ul>
               </div>
-              <div class="information-container">
-                <div class="information-title">Apprentissages réalisés :</div>
-                <div class="information-description">
-                  <ul>
-                    <li
-                      v-for="item in state.project.learning_achieved"
-                      v-bind:key="item.toString()"
-                    >
-                      {{ item }}
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="information-container">
-                <div class="information-title">Technologies utilisées :</div>
-                <div class="information-description">
-                  <ul>
-                    <li v-for="item in state.project.technologies" v-bind:key="item.toString()">
-                      {{ item }}
-                    </li>
-                  </ul>
-                </div>
+            </div>
+            <div class="information-container">
+              <div class="information-title">Technologies utilisées :</div>
+              <div class="information-description">
+                <ul>
+                  <li v-for="item in state.project.technologies" v-bind:key="item.toString()">
+                    {{ item }}
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="github">
@@ -117,6 +112,9 @@ const changePage = (side: 'left' | 'right') => {
                 <div id="github-text">GitHub du projet</div>
               </a>
             </div>
+          </div>
+          <div class="image-container">
+            <img :src="state.project.project_image" class="no-mobile" alt="image" />
           </div>
         </div>
       </div>
@@ -255,26 +253,11 @@ const changePage = (side: 'left' | 'right') => {
 .text-container {
   /* min-height: 100%; */
   height: 100%;
-  width: 100%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   /* background-color: red; */
-}
-
-.text-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* background-color: aqua; */
-}
-
-/* .image-container {
-  width: 40%;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 img {
@@ -284,32 +267,33 @@ img {
   border-style: solid;
   max-width: 300px;
   max-height: 300px;
-} */
-
-/* .description-container {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  gap: 1rem;
 }
 
-.information-container {
+.image-container {
+  width: 40%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .information-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 } */
 
-/* .data-container {
+.data-container {
   display: flex;
   flex-direction: row;
   height: 100%;
+  justify-content: space-between;
 }
 
 img {
   height: 100%;
-  width: 100%;
   object-fit: cover;
-} */
+}
 
 #title {
   color: var(--color-text);
@@ -338,15 +322,15 @@ img {
   line-height: normal;
 }
 
-/* @media screen and (max-width: 768px) {
-  .description-container {
+@media screen and (max-width: 768px) {
+  .text-container {
     width: 100%;
   }
 
   .image-container {
     display: none;
   }
-} */
+}
 
 @media screen and (max-width: 768px) {
   .project {
