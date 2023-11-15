@@ -20,7 +20,6 @@ import ProjectContainer from "./ProjectContainer.vue"
     height: 100%;
     width: 100%;
     box-sizing: border-box;
-    padding: 2rem;
     overflow: hidden;
     /* margin: 0 2rem; */
     /* padding: 3rem; */

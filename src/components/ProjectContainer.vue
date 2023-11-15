@@ -78,26 +78,72 @@ const changePage = (side: 'left' | 'right') => {
 <template>
   <div class="project">
     <div class="container">
-
-
       <div class="project-container">
         <div class="data-container">
-          Salut
+          <div class="text-wrapper">
+            <div class="text-container">
+              <div id="title">{{ state.project.title }}</div>
+              <div class="information-container">
+                <div class="information-title">Description du projet :</div>
+                <div class="information-description">{{ state.project.description }}</div>
+              </div>
+              <div class="information-container">
+                <div class="information-title">Apprentissages réalisés :</div>
+                <div class="information-description">
+                  <ul>
+                    <li
+                      v-for="item in state.project.learning_achieved"
+                      v-bind:key="item.toString()"
+                    >
+                      {{ item }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="information-container">
+                <div class="information-title">Technologies utilisées :</div>
+                <div class="information-description">
+                  <ul>
+                    <li v-for="item in state.project.technologies" v-bind:key="item.toString()">
+                      {{ item }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="github">
+              <a :href="state.project.github_link" target="_blank">
+                <IconGithub />
+                <div id="github-text">GitHub du projet</div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-
 
       <div class="arrows">
         <IconArrow class="arrow" rotation="left" @click="changePage('left')" />
         <div class="dots">
           <div v-for="index in projects.length" v-bind:key="index">
             <div v-if="index - 1 === state.index">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="10"
+                viewBox="0 0 10 10"
+                fill="none"
+              >
                 <circle cx="5" cy="5" r="5" fill="#F27B00" />
               </svg>
             </div>
             <div v-else>
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="10"
+                viewBox="0 0 10 10"
+                fill="none"
+              >
                 <circle cx="5" cy="5" r="5" fill="#AF6E46" />
               </svg>
             </div>
@@ -110,7 +156,10 @@ const changePage = (side: 'left' | 'right') => {
 </template>
 
 <style scoped>
-.github>a {
+.github {
+  height: auto;
+}
+.github > a {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -133,37 +182,94 @@ const changePage = (side: 'left' | 'right') => {
   color: var(--color-orange);
 }
 
+/* 0 */
 .project {
-  width: 100%;
-  height: 100%;
+  height: 75%;
+  width: 90%;
+}
+/* 1 */
+.container {
   display: flex;
   flex-direction: column;
+  border: 3px;
+  border-radius: 10px;
+  border-color: var(--color-gold);
+  border-style: solid;
+  height: 100%;
+  width: 100%;
+  /* background-color: red; */
+
   box-sizing: border-box;
+}
+
+/* 2: Devrait contenir les éléments*/
+.project-container {
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: var(--color-secondary);
+  overflow: auto;
+  flex-grow: 1;
+}
+/* 3: Devrait contenir toutes les informations */
+.data-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1rem;
+  min-height: 100%;
+  /* background-color: blue; */
+}
+
+/* Arrows  */
+.arrows {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-color: var(--color-secondary); */
+  align-items: center;
+  width: 100%;
+  color: var(--color-gold);
+  padding: 0 2rem;
+}
+
+.arrows > .arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dots {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
   justify-content: center;
   align-items: center;
-}
-
-
-.project-container {
-  width: 100%;
   height: 100%;
 }
 
-.data-container {
-  background-color: darkred;
-  width: 100%;
-  min-height: 100%;
-  overflow: auto;
+.arrow:hover {
+  color: var(--color-accent);
+  cursor: pointer;
 }
 
-/* .text-container {
+.text-container {
+  /* min-height: 100%; */
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  /* background-color: red; */
 }
 
-.image-container {
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: aqua; */
+}
+
+/* .image-container {
   width: 40%;
   padding: 2rem;
   display: flex;
@@ -193,20 +299,6 @@ img {
   gap: 0.5rem;
 } */
 
-.container {
-  display: flex;
-  flex-direction: column;
-  /* padding: 1rem 3.125rem; */
-  border: 3px;
-  border-radius: 10px;
-  border-color: var(--color-gold);
-  border-style: solid;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  position: relative;
-}
-
 /* .data-container {
   display: flex;
   flex-direction: row;
@@ -219,25 +311,7 @@ img {
   object-fit: cover;
 } */
 
-.arrows {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /* background-color: var(--color-secondary); */
-  align-items: center;
-  width: 100%;
-  color: var(--color-gold);
-  padding: 0 2rem;
-}
-
-.arrows>.arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* #title {
+#title {
   color: var(--color-text);
   font-family: Poppins;
   font-size: 1.5rem;
@@ -262,29 +336,21 @@ img {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-} */
-
-.dots {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
 }
 
-.arrow:hover {
-  color: var(--color-accent);
-  cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .description-container {
     width: 100%;
   }
 
   .image-container {
     display: none;
+  }
+} */
+
+@media screen and (max-width: 768px) {
+  .project {
+    height: 600px;
   }
 }
 </style>
