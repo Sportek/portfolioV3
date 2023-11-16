@@ -11,24 +11,29 @@ import IconCurriculumVitae from './icons/IconCurriculumVitae.vue'
     <hr class="no-mobile" />
     <nav class="navbar-titles no-mobile">
       <ul class="text">
-        <li><a href="#about" class="text">ABOUT</a></li>
-        <li><a href="#experience" class="text">EXPERIENCE</a></li>
-        <li><a href="#contact" class="text">CONTACT</a></li>
+        <li><a href="#about" class="text animate-click">ABOUT</a></li>
+        <li><a href="#experience" class="text animate-click">EXPERIENCE</a></li>
+        <li><a href="#contact" class="text animate-click">CONTACT</a></li>
       </ul>
     </nav>
     <hr class="no-mobile" />
     <nav class="navbar-icons no-mobile">
       <ul>
         <li>
-          <a href="https://www.linkedin.com/in/gablandry/" target="_blank" class="icons"
+          <a
+            href="https://www.linkedin.com/in/gablandry/"
+            target="_blank"
+            class="icons animate-click"
             ><IconLinkedin
           /></a>
         </li>
         <li>
-          <a href="https://github.com/Sportek" target="_blank" class="icons"><IconGithub /></a>
+          <a href="https://github.com/Sportek" target="_blank" class="icons animate-click"
+            ><IconGithub
+          /></a>
         </li>
         <li>
-          <a href="src/assets/files/gabriel_cv.pdf" download class="icons"
+          <a href="src/assets/files/gabriel_cv.pdf" download class="icons animate-click"
             ><IconCurriculumVitae
           /></a>
         </li>

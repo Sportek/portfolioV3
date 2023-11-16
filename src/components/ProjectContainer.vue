@@ -124,7 +124,7 @@ const changePage = (side: 'left' | 'right') => {
       </div>
 
       <div class="arrows">
-        <IconArrow class="arrow" rotation="left" @click="changePage('left')" />
+        <IconArrow class="arrow animate-click" rotation="left" @click="changePage('left')" />
         <div class="dots">
           <div v-for="index in projects.length" v-bind:key="index">
             <div v-if="index - 1 === state.index">
@@ -151,7 +151,7 @@ const changePage = (side: 'left' | 'right') => {
             </div>
           </div>
         </div>
-        <IconArrow class="arrow" rotation="right" @click="changePage('right')" />
+        <IconArrow class="arrow animate-click" rotation="right" @click="changePage('right')" />
       </div>
     </div>
   </div>

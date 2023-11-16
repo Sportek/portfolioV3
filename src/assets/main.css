@@ -5,6 +5,13 @@ a {
   transition: 0.4s;
 }
 
+/* Animations click */
+.animate-click:active {
+  transform: scale(0.95);
+  transition: transform 0.01s;
+  color: red;
+}
+
 @media screen and (max-width: 768px) {
   .no-mobile {
     display: none;
