@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import LeftBarComponent from '@/components/LeftBarComponent.vue'
+import HeaderContainer from '@/components/HeaderContainer.vue'
 </script>
 
 <template>
   <div class="board">
-    <section class="header"></section>
+    <HeaderContainer></HeaderContainer>
     <section class="leftbar">
       <LeftBarComponent />
     </section>
@@ -41,10 +42,9 @@ section.leftbar {
   height: 100vh;
 }
 
-section.header {
+HeaderContainer {
   grid-area: header;
   /* background-color: orange; */
-  height: 50px;
 }
 
 section.body {
